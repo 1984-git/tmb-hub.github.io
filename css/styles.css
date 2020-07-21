@@ -3,10 +3,9 @@ body {
     padding-top: 6.5rem;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 320px) {
     button.navbar-toggler {
         position: absolute !important;
         right: 10px !important;
-        /* top: 14px !important; */
     }
  }
