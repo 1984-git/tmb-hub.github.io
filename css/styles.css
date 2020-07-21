@@ -2,3 +2,11 @@ body {
     /* padding top so items are not behind the navbar */
     padding-top: 6.5rem;
 }
+
+@media (max-width: 575px) {
+    button.navbar-toggler {
+        position: absolute !important;
+        right: 10px !important;
+        /* top: 14px !important; */
+    }
+ }
