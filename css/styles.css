@@ -9,9 +9,21 @@ button.navbar-toggler {
     right: 10px !important;
 }
 
-@media (min-width: 800px) {
-    .jumbotron{
-        height: 95%;
-    }
-  }
+.navBarText{
+    font-size: 20px;
+}
 
+.navBarImage{
+    height: 2rem !important;
+}
+
+/* For anything bigger than 576px */
+@media (min-width: 576px) { 
+    .navBarText{
+        font-size: 40px;
+    }
+
+    .navBarImage{
+        height: 3.5rem !important;
+    }
+}
