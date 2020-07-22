@@ -1,6 +1,6 @@
 body {
     /* padding top so items are not behind the navbar */
-    padding-top: 5.5rem;
+    padding-top: 3.5rem;
 }
 
 button.navbar-toggler {
@@ -17,7 +17,12 @@ button.navbar-toggler {
 }
 
 /* For anything bigger than 576px */
-@media (min-width: 576px) { 
+@media (min-width: 576px) {
+    body {
+        /* padding top so items are not behind the navbar */
+        padding-top: 5.5rem;
+    }
+
     .navBarText{
         font-size: 40px;
     }
