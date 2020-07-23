@@ -74,17 +74,33 @@
                                         <input id="outboundDestination" list="outboundDestinationList"
                                             placeholder="Válassz vagy pötyögj...">
                                         <datalist id="outboundDestinationList"></datalist>
-                                        <legend>Dátum:</legend>
-                                        <input type="date" id="outboundDate">
-                                        <legend>Preferált napszak:</legend>
-                                        <div class="btn-group">
-                                            <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                Small button
-                                            </button>
-                                            <div class="dropdown-menu" id="outboundTime"></div>
+                                        <div class="row pb-2">
+                                            <div class="col-4 align-middle">Dátum:</div>
+                                            <div class="col-8 text-right">
+                                                <input type="date" id="outboundDate" style="margin: 0;">
+                                            </div>
                                         </div>
-                                        <legend>Járat tipusa:</legend>
-                                        <select id="outboundFlightType" onchange="ChangeFlightType()"></select>
+                                        <div class="row pb-2">
+                                            <div class="col-7 align-middle">Preferált napszak:</div>
+                                            <div class="col-5 text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="outboundTime"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-2">
+                                            <div class="col-4 align-middle">Járat tip.:</div>
+                                            <div class="col-8 text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="outboundFlightType"></div>
+                                                    <!-- <select id="" onchange="ChangeFlightType()"></select> -->
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Vissza" />
@@ -97,20 +113,35 @@
                                         <legend>Útvonal:</legend>
                                         <input id="inboundDestination" list="inboundDestinationList"
                                             placeholder="Válassz vagy pötyögj...">
-                                        <datalist id="inboundDestinationList">
-                                        </datalist>
-                                        <legend>Dátum</legend>
-                                        <input type="date" id="inboundDate">
-                                        <legend>Preferált napszak:</legend>
-                                        <div class="btn-group">
-                                            <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
-                                                Small button
-                                            </button>
-                                            <div class="dropdown-menu" id="inboundTime"></div>
+                                        <datalist id="inboundDestinationList"></datalist>
+                                        <div class="row pb-2">
+                                            <div class="col-4 align-middle">Dátum:</div>
+                                            <div class="col-8 text-right">
+                                                <input type="date" id="inboundDate" style="margin: 0;">
+                                            </div>
                                         </div>
-                                        <legend>Járat tipusa:</legend>
-                                        <select id="inboundFlightType">
-                                        </select>
+                                        
+                                        <div class="row pb-2">
+                                            <div class="col-7 align-middle">Preferált napszak:</div>
+                                            <div class="col-5 text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="inboundTime"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row pb-2">
+                                            <div class="col-4 align-middle">Járat tip.:</div>
+                                            <div class="col-8 text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="inboundFlightType"></div>
+                                                    <!-- <select id="" onchange="ChangeFlightType()"></select> -->
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Vissza" />

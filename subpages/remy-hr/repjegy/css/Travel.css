@@ -150,7 +150,7 @@ select.list-dt:focus {
 
 #progressbar #passengers:before {
     font-family: FontAwesome;
-    content: "\f007"
+    content: "\f500"
 }
 
 #progressbar #personal:before {

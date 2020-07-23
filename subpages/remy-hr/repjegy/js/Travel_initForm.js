@@ -7,55 +7,28 @@ function initFields() {
         "peter.hansen@remygroup.com", "sascha.wiebers@remygroup.com", "tamas.orosz@remygroup.com",
         "zoltan.erdei@remygroup.com", "zsuzsa.szokoly@remygroup.com"])
 
-
-    //Fill up the outbound flight enum
+    //Fill up the outbound flight list
     fillOptionList(document.getElementById("outboundDestinationList"), ["Düsseldorf - Budapest", "Frankfurt - Budapest",
         "Dortmund - Budapest", "Stuttgart - Budapest", "Bécs - Birmingham", "Bécs - Brüsszel", "Bécs - Tunisz",
         "Budapest - Birmingham", "Budapest - Brüsszel", "Budapest - Tunisz"]);
 
-    //Fill up the return flight enum
+    //Fill up the return flight list
     fillOptionList(document.getElementById("inboundDestinationList"), ["Budapest - Düsseldorf", "Budapest - Frankfurt",
         "Budapest - Dortmund", "Budapest - Stuttgart", "Birmingham - Bécs", "Birmingham - Budapest",
         "Brüsszel - Bécs", "Brüsszel - Budapest", "Tunisz - Bécs", "Tunisz - Budapest"]);
 
-
-    //Fill up the part of day enums (both)
+    //Fill up the part of day buttonlist (both)
     fillButtonList(document.getElementById("outboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
     fillButtonList(document.getElementById("inboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
 
     //Fill up the flight type enum
     document.getElementById("inboundFlightType").disabled = true;;
-
-    items = [document.getElementById("outboundFlightType"), document.getElementById("inboundFlightType")];
-    optionArray = ["Normál (nem fapados)", "Fapados"];
-
-    for (item of items) {
-        for (currentOption of optionArray) {
-            let optionItem = document.createElement('option'); // Listaelem létrehozása...
-            optionItem.innerHTML = currentOption;
-            item.appendChild(optionItem);
-        }
-    }
-
-
-    //Fill up the passengers enum
-    item = document.getElementById("emailList");
-    optionArray = ["agnes.csontos@remygroup.com", "dirk.vanrompaey@remygroup.com", "mark.rahman@remygroup.com",
-        "martin.klein@remygroup.com", "tamas.orosz@remygroup.com", "janos.szavo@remygroup.com",
-        "zoltan.erdei@remygroup.com", "kris.mattheus@remygroup.com", "zsuzsa.szokoly@remygroup.com",
-        "peter.hansen@remygroup.com", "sascha.wiebers@remygroup.com", "krisztian.bacso@remygroup.com",
-        "fredrik.markholt@remygroup.com"];
-
-    for (currentOption of optionArray.sort()) {
-        let optionItem = document.createElement('option'); // Listaelem létrehozása...
-        optionItem.innerHTML = currentOption;
-        item.appendChild(optionItem);
-    }
-
+    fillButtonList(document.getElementById("outboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
+    fillButtonList(document.getElementById("inboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
 }
 
 
-function fillOptionList (item, optionArray) {
+function fillOptionList(item, optionArray) {
     for (currentOption of optionArray) {
         let optionItem = document.createElement('option'); // Listaelem létrehozása...
         optionItem.innerHTML = currentOption;
@@ -64,7 +37,7 @@ function fillOptionList (item, optionArray) {
 }
 
 
-function fillButtonList (item, optionArray) {
+function fillButtonList(item, optionArray) {
     for ([i, currentOption] of optionArray.entries()) {
         let optionItem = document.createElement('a'); // Listaelem létrehozása...
         optionItem.className = "dropdown-item"
@@ -82,11 +55,3 @@ function fillButtonList (item, optionArray) {
         }
     }
 }
-
-
-
-
-
-
-
-
