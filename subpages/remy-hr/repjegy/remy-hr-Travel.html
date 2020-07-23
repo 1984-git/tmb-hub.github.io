@@ -63,7 +63,7 @@
                                         <datalist id="emailList"></datalist>
                                         <div id="currentEmailList" svalue=""></div>
                                         <legend style="padding-top: 20px;"">Az utasok neve:</legend>
-                                        <textarea id=" passengerNames" rows="4" style="resize: none;"></textarea>
+                                        <textarea id="passengerNames" rows="4" style="resize: none;"></textarea>
 
                                     </div>
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
@@ -72,9 +72,8 @@
                                 <!-- Page 2 -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <legend>Honnan hova:</legend>
-                                        <input id="outboundDestination" list="outboundDestinationList"
-                                            placeholder="Válassz vagy pötyögj...">
+                                        <legend>Útvonal</legend>
+                                        <input id="outboundDestination" list="outboundDestinationList" placeholder="Válassz vagy pötyögj...">
                                         <datalist id="outboundDestinationList"></datalist>
                                         <legend>Dátum:</legend>
                                         <input type="date" id="outboundDate">
