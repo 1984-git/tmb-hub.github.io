@@ -47,7 +47,7 @@
     border: none;
     border-bottom: 1px solid #ccc;
     border-radius: 0px;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
     margin-top: 2px;
     width: 100%;
     box-sizing: border-box;
@@ -131,7 +131,6 @@ select.list-dt:focus {
 
 #progressbar {
     padding: 0;
-    /* margin-bottom: 30px; */
     overflow: hidden;
     color: lightgrey
 }
@@ -239,7 +238,7 @@ select.list-dt:focus {
 
 legend{
     font-size: 20px;
-    padding: 0;
+    padding-top: 0px;
     margin: 0;
 
 }
