@@ -1,5 +1,6 @@
-
 function initFields(){
+
+    // TODO create a function for filling up lists instead of doing it all the time.
 
     item = document.getElementById("emailList");
     optionArray = ["agnes.csontos@remygroup.com", "dirk.vanrompaey@remygroup.com", "fredrik.markholt@remygroup.com",
@@ -23,7 +24,7 @@ function initFields(){
         let optionItem = document.createElement('option'); // Listaelem létrehozása...
         optionItem.innerHTML = currentOption;
         item.appendChild(optionItem);
-    }            
+    }             
 
 
     //Fill up the return flight enum
@@ -44,11 +45,16 @@ function initFields(){
 
     for (item of items) {
         for (currentOption of optionArray) {
-            let optionItem = document.createElement('option'); // Listaelem létrehozása...
-            optionItem.innerHTML = currentOption;
-            item.appendChild(optionItem);
+            let optionItem = document.createElement('a'); // Listaelem létrehozása...
+            optionItem.className = "dropdown-item"
+            optionItem.innerHTML = currentOption
+            optionItem.onclick = function test(){
+                this.parentElement.parentElement.firstElementChild.innerHTML = this.innerHTML
+            }
+            item.appendChild(optionItem)
         }
     }
+    
 
     //Fill up the flight type enum
     //document.getElementById("inboundFlightType").style.disabled = true;
@@ -82,3 +88,5 @@ function initFields(){
     }
 
 }
+
+

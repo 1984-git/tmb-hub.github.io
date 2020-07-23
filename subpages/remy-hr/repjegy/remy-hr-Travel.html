@@ -56,15 +56,13 @@
                                 <!-- Page 1 -->
                                 <fieldset>
                                     <div class="form-card">
-
                                         <legend>Az utasok email címe</legend>
                                         <input id="passengerEmails" list="emailList" class="emailEnum"
                                             onchange="addNewEmail(this)">
                                         <datalist id="emailList"></datalist>
                                         <div id="currentEmailList" svalue=""></div>
-                                        <legend style="padding-top: 20px;"">Az utasok neve:</legend>
-                                        <textarea id="passengerNames" rows="4" style="resize: none;"></textarea>
-
+                                        <legend>Az utasok neve:</legend>
+                                        <textarea id="passengerNames" rows="3" style="resize: none;"></textarea>
                                     </div>
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
                                 </fieldset>
@@ -73,12 +71,18 @@
                                 <fieldset>
                                     <div class="form-card">
                                         <legend>Útvonal</legend>
-                                        <input id="outboundDestination" list="outboundDestinationList" placeholder="Válassz vagy pötyögj...">
+                                        <input id="outboundDestination" list="outboundDestinationList"
+                                            placeholder="Válassz vagy pötyögj...">
                                         <datalist id="outboundDestinationList"></datalist>
                                         <legend>Dátum:</legend>
                                         <input type="date" id="outboundDate">
                                         <legend>Preferált napszak:</legend>
-                                        <select id="outboundTime"></select>
+                                        <div class="btn-group">
+                                            <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                Small button
+                                            </button>
+                                            <div class="dropdown-menu" id="outboundTime"></div>
+                                        </div>
                                         <legend>Járat tipusa:</legend>
                                         <select id="outboundFlightType" onchange="ChangeFlightType()"></select>
                                     </div>
@@ -97,9 +101,13 @@
                                         </datalist>
                                         <legend>Dátum</legend>
                                         <input type="date" id="inboundDate">
-                                        <legend>Preferált napszak</legend>
-                                        <select id="inboundTime">
-                                        </select>
+                                        <legend>Preferált napszak:</legend>
+                                        <div class="btn-group">
+                                            <button class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                Small button
+                                            </button>
+                                            <div class="dropdown-menu" id="inboundTime"></div>
+                                        </div>
                                         <legend>Járat tipusa:</legend>
                                         <select id="inboundFlightType">
                                         </select>
@@ -112,7 +120,8 @@
                                 <!-- Page 4 -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <textarea id="notes" rows="6" style="resize: none;" placeholder="Megjegyzések"></textarea>
+                                        <textarea id="notes" rows="6" style="resize: none;"
+                                            placeholder="Megjegyzések"></textarea>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Vissza" />

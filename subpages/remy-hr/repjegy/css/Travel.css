@@ -236,3 +236,10 @@ select.list-dt:focus {
     margin-top: 2px;
     margin-right: 2px;
 }
+
+legend{
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+
+}
