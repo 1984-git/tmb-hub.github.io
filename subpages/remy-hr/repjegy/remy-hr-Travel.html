@@ -17,7 +17,7 @@
     <script src="https://kit.fontawesome.com/ce169946aa.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="css/repjegy.css">
+    <link rel="stylesheet" href="css/Travel.css">
 
     <script type="text/javascript">
         window.onload = function () {
@@ -54,6 +54,30 @@
                                 </ul> <!-- fieldsets -->
                                 <fieldset>
                                     <div class="form-card">
+
+                                        <legend>Az utasok email címe</legend>
+                                        <input id="passengerEmails" list="emailList" class="emailEnum"
+                                            onchange="addNewEmail(this)">
+                                        <datalist id="emailList"><br>
+                                            <option>agnes.csontos@remygroup.com</option>
+                                            <option>dirk.vanrompaey@remygroup.com</option>
+                                            <option>fredrik.markholt@remygroup.com</option>
+                                            <option>janos.szavo@remygroup.com</option>
+                                            <option>kris.mattheus@remygroup.com</option>
+                                            <option>krisztian.bacso@remygroup.com</option>
+                                            <option>mark.rahman@remygroup.com</option>
+                                            <option>martin.klein@remygroup.com</option>
+                                            <option>peter.hansen@remygroup.com</option>
+                                            <option>sascha.wiebers@remygroup.com</option>
+                                            <option>tamas.orosz@remygroup.com</option>
+                                            <option>zoltan.erdei@remygroup.com</option>
+                                            <option>zsuzsa.szokoly@remygroup.com</option>
+                                        </datalist>
+                                        <div id="currentEmailList" svalue=""></div>
+
+                                        <legend style="padding-top: 20px;"">Az utasok neve:</legend>
+                                        <textarea id="passengerNames" rows="4" style="resize: none;"></textarea>
+
                                     </div>
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
                                 </fieldset>
@@ -65,7 +89,8 @@
                                             placeholder="Contact No." /> <input type="text" name="phno_2"
                                             placeholder="Alternate Contact No." />
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous" value="Vissza" />
+                                    <input type="button" name="previous" class="previous action-button-previous"
+                                        value="Vissza" />
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
                                 </fieldset>
                                 <fieldset>
@@ -102,24 +127,28 @@
                                                     <option>October</option>
                                                     <option>November</option>
                                                     <option>December</option>
-                                                </select> <select class="list-dt" id="year" name="expyear">
+                                                </select>
+                                                <select class="list-dt" id="year" name="expyear">
                                                     <option selected>Year</option>
-                                                </select> </div>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous" value="Vissza" />
+                                    <input type="button" name="previous" class="previous action-button-previous"
+                                        value="Vissza" />
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
 
                                 </fieldset>
                                 <fieldset>
                                     <div class="form-card">
                                         <h2 class="fs-title">Megjegyzések</h2>
-<!--                                         <input type="text" name="fname" placeholder="First Name" />
+                                        <!--                                         <input type="text" name="fname" placeholder="First Name" />
                                         <input type="text" name="lname" placeholder="Last Name" />
                                         <input type="text" name="phno" placeholder="Contact No." />
                                         <input type="text" name="phno_2" placeholder="Alternate Contact No." /> -->
                                     </div>
-                                    <input type="button" name="previous" class="previous action-button-previous" value="Vissza" />
+                                    <input type="button" name="previous" class="previous action-button-previous"
+                                        value="Vissza" />
                                     <input type="button" name="next" class="next action-button" value="Tovább" />
                                 </fieldset>
                                 <fieldset>
@@ -150,6 +179,8 @@
 
 </body>
 
-<script src="js/repjegy.js"></script>
+<script src="js/Travel_pageAnimator.js"></script>
+<script src="js/Travel_initForm.js"></script>
+<script src="js/Travel_emailList.js"></script>
 
 </html>
