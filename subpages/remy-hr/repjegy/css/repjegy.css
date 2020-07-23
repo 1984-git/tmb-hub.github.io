@@ -143,24 +143,29 @@ select.list-dt:focus {
 #progressbar li {
     list-style-type: none;
     font-size: 12px;
-    width: 25%;
+    width: 20%;
     float: left;
     position: relative
 }
 
-#progressbar #account:before {
-    font-family: FontAwesome;
-    content: "\f023"
-}
-
-#progressbar #personal:before {
+#progressbar #passengers:before {
     font-family: FontAwesome;
     content: "\f007"
 }
 
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f5b0"
+}
+
 #progressbar #payment:before {
     font-family: FontAwesome;
-    content: "\f09d"
+    content: "\f5af"
+}
+
+#progressbar #notes:before {
+    font-family: FontAwesome;
+    content: "\f328"
 }
 
 #progressbar #confirm:before {
