@@ -233,5 +233,5 @@ select.list-dt:focus {
 }
 
 .emailBtn{
-    padding-top: 10px;
+    margin-top: 2px !important;
 }
