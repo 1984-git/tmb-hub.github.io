@@ -41,7 +41,7 @@ function addNewEmail(inputField) {
   newButton = document.createElement('button');
   newButton.innerHTML = emailAddress.value;
   newButton.id = emailAddress.value;
-  newButton.className = "btn btn-info emailBtn";
+  newButton.className = "btn btn-info emailButton";
 
   // Here a new we create the onclick event for the new button which simply removes it
   newButton.onclick = function () {

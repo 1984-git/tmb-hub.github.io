@@ -232,6 +232,7 @@ select.list-dt:focus {
     object-fit: cover
 }
 
-.emailBtn{
-    margin-top: 2px !important;
+.emailButton{
+    margin-top: 2px;
+    margin-right: 2px;
 }
