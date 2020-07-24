@@ -24,8 +24,8 @@ function initFields() {
     fillButtonList(document.getElementById("inboundArrivalList"), destinations);
 
     // The flight type can only be changed on the outbound side. The same setting is applied to the inbound one.
-    document.getElementById("outboundFlightType").addEventListener("click", function x(){
-        document.getElementById("inboundFlightType").innerHTML = this.parentElement.firstElementChild.innerHTML
+    document.getElementById("outboundFlightTypeList").addEventListener("click", function x(){
+        document.getElementById("inboundFlightType").innerHTML = document.getElementById("outboundFlightType").innerHTML
     })
 
 }

@@ -62,7 +62,7 @@
                                         <input id="passengerEmails" list="emailList" class="emailEnum"
                                             onchange="addNewEmail(this)">
                                         <datalist id="emailList"></datalist>
-                                        <div id="currentEmailList" svalue=""></div>
+                                        <div id="passengerEmailList" value=""></div>
                                         <legend class="mt-2">Az utasok neve:</legend>
                                         <textarea id="passengerNames" rows="3" style="resize: none;"></textarea>
                                     </div>
@@ -189,7 +189,7 @@
                                 <!-- Page 4 -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <textarea id="notes" rows="6" style="resize: none;"
+                                        <textarea id="noteText" rows="6" style="resize: none;"
                                             placeholder="Megjegyzések"></textarea>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"

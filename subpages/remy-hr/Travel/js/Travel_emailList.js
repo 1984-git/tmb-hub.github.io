@@ -31,7 +31,7 @@ function removeEmail(buttonReference) {
     pn.value = pn.value.slice(2);
   }
   
-  selectedEmails = document.getElementById("currentEmailList");
+  selectedEmails = document.getElementById("passengerEmailList");
   selectedEmails.removeChild(buttonReference);
 }
 
@@ -48,7 +48,7 @@ function addNewEmail(inputField) {
     removeEmail(this);
   }
 
-  selectedEmails = document.getElementById("currentEmailList");
+  selectedEmails = document.getElementById("passengerEmailList");
   selectedEmails.appendChild(newButton);
 
   // If there is already something in the box then add a ", " separator
