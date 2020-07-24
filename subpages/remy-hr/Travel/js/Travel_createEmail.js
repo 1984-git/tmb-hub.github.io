@@ -1,11 +1,16 @@
 function createEmail() {
 
     let passengers = document.getElementById("passengerNames").value
+
     let outboundDate = document.getElementById("outboundDate").value
     let outboundDeparture = document.getElementById("outboundDeparture").innerText
     let outboundArrival = document.getElementById("outboundArrival").innerText
+    let outboundTime = document.getElementById("outboundTime").innerText
+
+    let inboundDate = document.getElementById("inboundDate").value
     let inboundDeparture = document.getElementById("inboundDeparture").innerText
     let inboundArrival = document.getElementById("inboundArrival").innerText
+    let inboundTime = document.getElementById("inboundTime").innerText
 
     console.log(passengers)
 
@@ -15,18 +20,17 @@ function createEmail() {
 
     console.log(mySubject)
 
-    let myBody = "Hello!<br/><br/>Árajánlatot kérek az alábbiak szerint:<br/><br/>" +
-        "<table style=`white-space:nowrap`>" +
-        "<tr><td><b>Utas(ok):</b></td><td>&emsp;      " + passengers + "&emsp;&emsp;&emsp;</td></tr>" +
-        "<tr></tr>" +
-        "<tr><td><b>Honnan-hova:</b></td><td>&emsp;   " + outboundDeparture + " - " + outboundArrival +
-        "</td></tr>";
-    /*         "<tr><td><b>Utazás dátuma:</b></td><td>&emsp; " & FFToDate.SelectionStart.Year & "." & Format(FFToDate.SelectionStart.Month, "00") & "." & Format(FFToDate.SelectionStart.Day, "00") &
-            "&emsp;&emsp;Preferált napszak: " & FFToTime.Text & "</td></tr>" &
-            "<tr><td></td><td></td></tr>                  " &
-            "<tr><td><b>Honnan-hova:</b></td><td>&emsp;   " & FFback.Text & "</td></tr>" &
-            "<tr><td><b>Időpont vissza:</b></td><td>&emsp; " & FFBackDate.SelectionStart.Year & "." & Format(FFBackDate.SelectionStart.Month, "00") & "." & Format(FFBackDate.SelectionStart.Day, "00") &
-            "&emsp;&emsp;Preferált napszak: " & FFBackTime.Text & "</td></tr>" &
+    let myBody = `Hello!<br/><br/>Árajánlatot kérek az alábbiak szerint:<br/><br/>` +
+        `<table style="white-space:nowrap">` +
+        `<tr><td><b>Utas(ok):</b></td><td>&emsp;${passengers}</td></tr>` +
+        `<tr><td><b>Honnan-hova:</b></td><td>&emsp;${outboundDeparture} - ${outboundArrival} </td></tr>` +
+        `<tr><td><b>Utazás dátuma:</b></td><td>&emsp;${outboundDate}&emsp;&emsp;(Preferált napszak: ${outboundTime})</td></tr>` +
+        `<tr><td><b>Preferált napszak:</b></td><td>&emsp;${outboundTime}</td></tr>` +
+        `<tr><td></td><td></td></tr>` +
+        `<tr><td><b>Honnan-hova:</b></td><td>&emsp;${inboundDeparture} - ${inboundArrival}</td></tr>` +
+        `<tr><td><b>Utazás dátuma:</b></td><td>&emsp;${inboundDate}&emsp;&emsp;(Preferált napszak: ${inboundTime})</td></tr>` +
+        `<tr><td></td><td></td></tr>` 
+        /*
             "<tr></tr>" &
             "<tr><td><b>Járat:</b></td><td>&emsp;          " & FFAircraftType.Text & "</td></tr>" &
             "<tr></tr>" &
@@ -60,7 +64,6 @@ function createEmail() {
 function copyToClip(str) {
     function listener(e) {
         e.clipboardData.setData("text/html", str);
-        e.clipboardData.setData("text/plain", str);
         e.preventDefault();
     }
     document.addEventListener("copy", listener);
