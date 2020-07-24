@@ -8,24 +8,24 @@ function initFields() {
         "zoltan.erdei@remygroup.com", "zsuzsa.szokoly@remygroup.com"])
 
     //Fill up the part of day buttonlist (both)
-    fillButtonList(document.getElementById("outboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
-    fillButtonList(document.getElementById("inboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
+    fillButtonList(document.getElementById("outboundTimeList"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
+    fillButtonList(document.getElementById("inboundTimeList"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
 
     //Fill up the flight type enum
     document.getElementById("inboundFlightType").disabled = true;
-    fillButtonList(document.getElementById("outboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
-    fillButtonList(document.getElementById("inboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
+    fillButtonList(document.getElementById("outboundFlightTypeList"), ["Normál (nem fapados)", "Fapados"]);
+    fillButtonList(document.getElementById("inboundFlightTypeList"), ["Normál (nem fapados)", "Fapados"]);
 
     //Fill up the outbound flight list
     let destinations = ["Válassz...", "Birmingham", "Brüsszel", "Budapest", "Bécs", "Dortmund", "Düsseldorf", "Frankfurt", "Stuttgart", "Tunisz"]
-    fillButtonList(document.getElementById("outboundDeparture"), destinations);
-    fillButtonList(document.getElementById("outboundArrival"), destinations);
-    fillButtonList(document.getElementById("inboundDeparture"), destinations);
-    fillButtonList(document.getElementById("inboundArrival"), destinations);
+    fillButtonList(document.getElementById("outboundDepartureList"), destinations);
+    fillButtonList(document.getElementById("outboundArrivalList"), destinations);
+    fillButtonList(document.getElementById("inboundDepartureList"), destinations);
+    fillButtonList(document.getElementById("inboundArrivalList"), destinations);
 
     // The flight type can only be changed on the outbound side. The same setting is applied to the inbound one.
     document.getElementById("outboundFlightType").addEventListener("click", function x(){
-        document.getElementById("inboundType").innerHTML = this.parentElement.firstElementChild.innerHTML
+        document.getElementById("inboundFlightType").innerHTML = this.parentElement.firstElementChild.innerHTML
     })
 
 }
