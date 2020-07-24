@@ -152,12 +152,12 @@ select.list-dt:focus {
     content: "\f500"
 }
 
-#progressbar #personal:before {
+#progressbar #outBound:before {
     font-family: FontAwesome;
     content: "\f5b0"
 }
 
-#progressbar #payment:before {
+#progressbar #inBound:before {
     font-family: FontAwesome;
     content: "\f5af"
 }

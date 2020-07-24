@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Demo Page</title>
+    <title>Travel</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="css/Travel.css">
 
+    <!-- Loading the navbar -->
     <script type="text/javascript">
         window.onload = function () {
             $.get("/commonNavbar/navbar.html", function (data) {
@@ -47,8 +48,8 @@
                                 <!-- progressbar -->
                                 <ul id="progressbar">
                                     <li id="passengers" class="active"><strong>Utasok</strong></li>
-                                    <li id="personal"><strong>Odaút</strong></li>
-                                    <li id="payment"><strong>Visszaút</strong></li>
+                                    <li id="outBound"><strong>Odaút</strong></li>
+                                    <li id="inBound"><strong>Visszaút</strong></li>
                                     <li id="notes"><strong>Megjegyzés</strong></li>
                                     <li id="confirm"><strong>Levél</strong></li>
                                 </ul>
@@ -70,16 +71,35 @@
                                 <!-- Page 2 -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <legend>Útvonal</legend>
-                                        <input id="outboundDestination" list="outboundDestinationList"
-                                            placeholder="Válassz vagy pötyögj...">
-                                        <datalist id="outboundDestinationList"></datalist>
+                                        <div class="row pb-2">
+                                            <div class="col-5 my-auto">Indulás:</div>
+                                            <div class="col-7 my-auto text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="outboundDeparture"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pb-2">
+                                            <div class="col-5 my-auto">Érkezés:</div>
+                                            <div class="col-7 my-auto text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="outboundArrival"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row pb-2">
                                             <div class="col-4 my-auto">Dátum:</div>
                                             <div class="col-8 text-right">
                                                 <input type="date" id="outboundDate" style="margin: 0;">
                                             </div>
                                         </div>
+
                                         <div class="row pb-2">
                                             <div class="col-7 my-auto">Preferált napszak:</div>
                                             <div class="col-5 my-auto text-right">
@@ -95,9 +115,8 @@
                                             <div class="col-8 text-right">
                                                 <div class="btn-group">
                                                     <button class="btn btn-info btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown"></button>
+                                                        data-toggle="dropdown"> </button>
                                                     <div class="dropdown-menu" id="outboundFlightType"></div>
-                                                    <!-- <select id="" onchange="ChangeFlightType()"></select> -->
                                                 </div>
                                             </div>
                                         </div>
@@ -110,17 +129,35 @@
                                 <!-- Page 3 -->
                                 <fieldset>
                                     <div class="form-card">
-                                        <legend>Útvonal:</legend>
-                                        <input id="inboundDestination" list="inboundDestinationList"
-                                            placeholder="Válassz vagy pötyögj...">
-                                        <datalist id="inboundDestinationList"></datalist>
+                                        <div class="row pb-2">
+                                            <div class="col-5 my-auto">Indulás:</div>
+                                            <div class="col-7 my-auto text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="inboundDeparture"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row pb-2">
+                                            <div class="col-5 my-auto">Érkezés:</div>
+                                            <div class="col-7 my-auto text-right">
+                                                <div class="btn-group">
+                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown"></button>
+                                                    <div class="dropdown-menu" id="inboundArrival"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
                                         <div class="row pb-2">
                                             <div class="col-4 my-auto">Dátum:</div>
                                             <div class="col-8 text-right">
                                                 <input type="date" id="inboundDate" style="margin: 0;">
                                             </div>
                                         </div>
-                                        
+
                                         <div class="row pb-2">
                                             <div class="col-7 my-auto">Preferált napszak:</div>
                                             <div class="col-5 text-right">
@@ -135,10 +172,9 @@
                                             <div class="col-4 my-auto">Járat tip.:</div>
                                             <div class="col-8 text-right">
                                                 <div class="btn-group">
-                                                    <button class="btn btn-info btn-sm dropdown-toggle"
+                                                    <button id = "inboundType" disabled class="btn btn-secondary btn-sm dropdown-toggle"
                                                         data-toggle="dropdown"></button>
                                                     <div class="dropdown-menu" id="inboundFlightType"></div>
-                                                    <!-- <select id="" onchange="ChangeFlightType()"></select> -->
                                                 </div>
                                             </div>
                                         </div>

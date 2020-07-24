@@ -7,24 +7,27 @@ function initFields() {
         "peter.hansen@remygroup.com", "sascha.wiebers@remygroup.com", "tamas.orosz@remygroup.com",
         "zoltan.erdei@remygroup.com", "zsuzsa.szokoly@remygroup.com"])
 
-    //Fill up the outbound flight list
-    fillOptionList(document.getElementById("outboundDestinationList"), ["Düsseldorf - Budapest", "Frankfurt - Budapest",
-        "Dortmund - Budapest", "Stuttgart - Budapest", "Bécs - Birmingham", "Bécs - Brüsszel", "Bécs - Tunisz",
-        "Budapest - Birmingham", "Budapest - Brüsszel", "Budapest - Tunisz"]);
-
-    //Fill up the return flight list
-    fillOptionList(document.getElementById("inboundDestinationList"), ["Budapest - Düsseldorf", "Budapest - Frankfurt",
-        "Budapest - Dortmund", "Budapest - Stuttgart", "Birmingham - Bécs", "Birmingham - Budapest",
-        "Brüsszel - Bécs", "Brüsszel - Budapest", "Tunisz - Bécs", "Tunisz - Budapest"]);
-
     //Fill up the part of day buttonlist (both)
     fillButtonList(document.getElementById("outboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
     fillButtonList(document.getElementById("inboundTime"), ["nincs", "reggel", "délelőtt", "délután", "este"]);
 
     //Fill up the flight type enum
-    document.getElementById("inboundFlightType").disabled = true;;
+    document.getElementById("inboundFlightType").disabled = true;
     fillButtonList(document.getElementById("outboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
     fillButtonList(document.getElementById("inboundFlightType"), ["Normál (nem fapados)", "Fapados"]);
+
+    //Fill up the outbound flight list
+    let destinations = ["Válassz...", "Birmingham", "Brüsszel", "Budapest", "Bécs", "Dortmund", "Düsseldorf", "Frankfurt", "Stuttgart", "Tunisz"]
+    fillButtonList(document.getElementById("outboundDeparture"), destinations);
+    fillButtonList(document.getElementById("outboundArrival"), destinations);
+    fillButtonList(document.getElementById("inboundDeparture"), destinations);
+    fillButtonList(document.getElementById("inboundArrival"), destinations);
+
+    // The flight type can only be changed on the outbound side. The same setting is applied to the inbound one.
+    document.getElementById("outboundFlightType").addEventListener("click", function x(){
+        document.getElementById("inboundType").innerHTML = this.parentElement.firstElementChild.innerHTML
+    })
+
 }
 
 
@@ -35,7 +38,6 @@ function fillOptionList(item, optionArray) {
         item.appendChild(optionItem);
     }
 }
-
 
 function fillButtonList(item, optionArray) {
     for ([i, currentOption] of optionArray.entries()) {
