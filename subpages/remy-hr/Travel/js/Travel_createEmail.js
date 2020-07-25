@@ -23,9 +23,7 @@ function createEmail() {
 
     today = yyyy + "." + mm + '.' + dd + ".";
 
-    let mySubject = "BPI Group Hungary Kft. árajánlat kérés (" +
-        passengers + "; " +
-        outboundDate + ")"
+    let mySubject = `BPI Group Hungary Kft. árajánlat kérés (${passengers}; ${outboundDate})`
 
     let myBody = `Hello!<br/><br/>Árajánlatot kérek az alábbiak szerint:<br/><br/>` +
         `<table style="white-space:nowrap">` +
