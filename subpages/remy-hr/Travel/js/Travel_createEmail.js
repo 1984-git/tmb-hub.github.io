@@ -1,7 +1,6 @@
 function createEmail() {
 
     let passengers = document.getElementById("passengerNames").value
-    let passengerEmails = document.getElementById("passengerEmailList").innerHTML
 
     let outboundDate = document.getElementById("outboundDate").value
     let outboundDeparture = document.getElementById("outboundDeparture").innerText
@@ -16,6 +15,12 @@ function createEmail() {
 
     let notes = document.getElementById("noteText").value
 
+    let passengerEmails = []
+    for (let email of document.getElementById("passengerEmailList").children){
+        passengerEmails.push(email.innerHTML)
+    }
+    passengerEmails = passengerEmails.join(", ")
+    
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, '0');
     let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -26,26 +31,28 @@ function createEmail() {
     let mySubject = `BPI Group Hungary Kft. árajánlat kérés (${passengers}; ${outboundDate})`
 
     let myBody = `Hello!<br/><br/>Árajánlatot kérek az alábbiak szerint:<br/><br/>` +
-        `<table style="white-space:nowrap">` +
-        `<tr><td><b>Utas(ok):</b></td><td>&emsp;${passengers}</td></tr>` +
-        `<tr><td><b>Honnan-hova:</b></td><td>&emsp;${outboundDeparture} - ${outboundArrival} </td></tr>` +
-        `<tr><td><b>Utazás dátuma:</b></td><td>&emsp;${outboundDate}&emsp;&emsp;(Preferált napszak: ${outboundTime})</td></tr>` +
+        `<table>` +
+        `<tr><td><b>Utas(ok):&emsp;</b></td><td>${passengers}</td></tr>` +
+        `<tr><td><b>Honnan-hova:&emsp;</b></td><td>${outboundDeparture} - ${outboundArrival} </td></tr>` +
+        `<tr><td><b>Utazás dátuma:&emsp;</b></td><td>${outboundDate}    (Preferált napszak: ${outboundTime})</td></tr>` +
         `<tr><td></td><td></td></tr>` +
-        `<tr><td><b>Honnan-hova:</b></td><td>&emsp;${inboundDeparture} - ${inboundArrival}</td></tr>` +
-        `<tr><td><b>Utazás dátuma:</b></td><td>&emsp;${inboundDate}&emsp;&emsp;(Preferált napszak: ${inboundTime})</td></tr>` +
+        `<tr><td><b>Honnan-hova:&emsp;</b></td><td>${inboundDeparture} - ${inboundArrival}</td></tr>` +
+        `<tr><td><b>Utazás dátuma:&emsp;</b></td><td>${inboundDate}    (Preferált napszak: ${inboundTime})</td></tr>` +
         `<tr><td></td><td></td></tr>` +
-        `<tr></tr><tr><td><b>Járat:</b></td><td>&emsp;${outboundFlightType}</td></tr>` +
+        `<tr></tr><tr><td><b>Járat:&emsp;</b></td><td>${outboundFlightType}</td></tr>` +
         `<tr></tr>` +
-        `<tr><td><b>Utasok email címe:</b></td><td>&emsp;${passengerEmails}</td></tr>`
+        `<tr><td><b>Utasok email címe:&emsp;</b></td><td>${passengerEmails}</td></tr>`
 
 
     // Adding the notes filed if there are any notes
-    if(notes){
-        myBody += `<tr></tr><tr><td><b>Megjegyés:</b></td><td>&emsp;${notes}</td></tr>`
+    if (notes) {
+        myBody += `<tr></tr><tr><td><b>Megjegyés:&emsp;</b></td><td>${notes}</td></tr>`
     }
 
+    myBody += `</table>`
+
     // Adding the "thanks" and current date
-    myBody += `</table><br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:`
+    myBody += `<br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:`
 
 
     document.getElementById("emailText").innerHTML = myBody
@@ -63,4 +70,4 @@ function copyToClip(str) {
     document.addEventListener("copy", listener);
     document.execCommand("copy");
     document.removeEventListener("copy", listener);
-};
+}
