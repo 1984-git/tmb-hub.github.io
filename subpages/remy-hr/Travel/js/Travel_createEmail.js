@@ -52,12 +52,14 @@ function createEmail() {
     myBody += `</table>`
 
     // Adding the "thanks" and current date
-    myBody += `<br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:`
-
+    myBody += `<br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:<br/>Csontos Ágnes`
 
     document.getElementById("emailText").innerHTML = myBody
 
     copyToClip(myBody)
+
+    window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=""`);
+    window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=""`);
 
 }
 
