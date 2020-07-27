@@ -56,10 +56,20 @@ function createEmail() {
 
     document.getElementById("emailText").innerHTML = myBody
 
-    copyToClip(myBody)
 
-    window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=""`);
-    window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=""`);
+/*     copyToClip(myBody) */
+
+
+    var copyText = document.getElementById("emailText")
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+    document.execCommand("copy");
+
+
+    window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`);
+    window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`);
 
 }
 
