@@ -54,7 +54,7 @@ function createEmail() {
     // Adding the "thanks" and current date
     myBody += `<br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:<br/>Csontos Ágnes`
 
-    document.getElementById("emailText").innerHTML = myBody
+    document.getElementById("emailText").value = myBody
 
 
 /*     copyToClip(myBody) */
