@@ -54,41 +54,7 @@ function createEmail() {
     // Adding the "thanks" and current date
     myBody += `<br/><br/>Miskolc, ${today}<br/><br/>Köszönettel:<br/>Csontos Ágnes`
 
-    document.getElementById("emailText").innerHTML = myBody
-
-
-/*     copyToClip(myBody) */
-
-
-    var container = document.getElementById("emailText")
-    window.getSelection().removeAllRanges()
-    var range = document.createRange()
-    range.selectNode(container)
-    window.getSelection().addRange(range)
-    // [5.1]
-    document.execCommand('copy')
-
-
-
-
- /*   Select the text field 
-    copyText.select();
-    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
-    /*document.execCommand("copy"); */
-
-
-/*     window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`);
-    window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`); */
-
-}
-
-
-function copyToClip(str) {
-    function listener(e) {
-        e.clipboardData.setData("text/html", str);
-        e.preventDefault();
-    }
-    document.addEventListener("copy", listener);
-    document.execCommand("copy");
-    document.removeEventListener("copy", listener);
+    document.getElementById("emailBody").innerHTML = myBody
+    document.getElementById("emailSubject").innerHTML = mySubject
+    
 }

@@ -206,12 +206,20 @@
 
                                 <!-- Page 5 -->
                                 <fieldset>
-                                    <div class="textarea">
-                                        <input type="button" id="copyButton" value ="Copy" />
+                                    <input type="button" id="copyButton" value="Send email" onclick="myClick()" />
+                                    <div class="card text-dark text-left">
                                         <div class="row">
-                                            <div id="emailText" class="col-12 text-left">
+                                            <div id="emailSubject" class="col-12 text-left">
                                             </div>
-                                        </div> <br>
+                                        </div>
+                                        <br>
+                                    </div>
+                                    <div class="card text-dark text-left">
+                                        <div class="row">
+                                            <div id="emailBody" class="col-12 text-left">
+                                            </div>
+                                        </div>
+                                        <br>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
                                         value="Vissza" />
@@ -234,15 +242,23 @@
 
 <script>
     initFields();
-    /* createEmail(); */
 
     function ChangeFlightType() {
         document.getElementById("inboundFlightType").innerHTML = document.getElementById("outboundFlightType").innerHTML;
     }
 
-    document.getElementById("copyButton").addEventListener("click", function (){
-        alert("Hello")
-    })
+    function myClick() {
+        var emailBody = document.getElementById("emailBody")
+        var emailSubject = document.getElementById("emailSubject").innerHTML
+        window.getSelection().removeAllRanges()
+        var range = document.createRange()
+        range.selectNode(emailBody)
+        window.getSelection().addRange(range)
+        document.execCommand('copy')
+        mySubject = "kaka"
+        window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${emailSubject}&body=`);
+        /*window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`); */
+    }
 
 
 
