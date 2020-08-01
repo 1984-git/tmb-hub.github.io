@@ -206,12 +206,11 @@
 
                                 <!-- Page 5 -->
                                 <fieldset>
-                                    <div class="form-card">
+                                    <div class="textarea">
+                                        <input type="button" id="copyButton" value ="Copy" />
                                         <div class="row">
                                             <div id="emailText" class="col-12 text-left">
-                                                <!-- <img class="fit-image"
-                                                    src="https://img.icons8.com/color/96/000000/ok--v2.png"> -->
-                                                </div>
+                                            </div>
                                         </div> <br>
                                     </div>
                                     <input type="button" name="previous" class="previous action-button-previous"
@@ -240,6 +239,13 @@
     function ChangeFlightType() {
         document.getElementById("inboundFlightType").innerHTML = document.getElementById("outboundFlightType").innerHTML;
     }
+
+    document.getElementById("copyButton").addEventListener("click", function (){
+        alert("Hello")
+    })
+
+
+
 </script>
 
 </html>
