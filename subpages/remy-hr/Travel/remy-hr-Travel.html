@@ -245,7 +245,7 @@
 
     function ChangeFlightType() {
         document.getElementById("inboundFlightType").innerHTML = document.getElementById("outboundFlightType").innerHTML;
-    }
+    }c
 
     function myClick() {
         var emailBody = document.getElementById("emailBody")
@@ -255,7 +255,6 @@
         range.selectNode(emailBody)
         window.getSelection().addRange(range)
         document.execCommand('copy')
-        mySubject = "kaka"
         window.open(`mailto:istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${emailSubject}&body=`);
         /*window.open(`ms-outlook://compose?to=istvan.baktai@gmail.com?cc=agnes.csontos@remygroup.com&subject=${mySubject}&body=`); */
     }
